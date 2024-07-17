@@ -1,1 +1,40 @@
-# pcslara.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Example</title>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js"></script>
+  <!-- Adicione outras bibliotecas do Firebase conforme necessário -->
+</head>
+<body>
+  <h1>Firebase Example</h1>
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+          apiKey: "AIzaSyD3qO0-pNlOAKb6L7e2XZwd5Bv3U97pz-U",
+          authDomain: "torneio-881bd.firebaseapp.com",
+          projectId: "torneio-881bd",
+          storageBucket: "torneio-881bd.appspot.com",
+          messagingSenderId: "134910518249",
+          appId: "1:134910518249:web:92381d2a4e6a504bb92178"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(app);
+
+    // Test the connection
+    db.collection("test").add({
+      name: "test",
+      description: "This is a test document"
+    }).then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    }).catch((error) => {
+      console.error("Error adding document: ", error);
+    });
+  </script>
+</body>
+</html>
+
